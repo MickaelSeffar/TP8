@@ -1,0 +1,16 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Idées{% endblock %}
+
+{% block name %}Page des idées{% endblock %}
+
+{% block container %}
+
+    <ul style="list-style-type: none;">
+        {% for idea in ideas %}
+            <li><a href="{{ url('idea_detail', { "id": idea.id }) }}">{{ idea.title }}</a> ({{ idea.category.name }})</li>
+        {% endfor %}
+    </ul>
+
+
+{% endblock %}

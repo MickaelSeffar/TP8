@@ -1,0 +1,20 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Idées{% endblock %}
+
+{% block name %}Détail de l'idée {{ idea.id }}{% endblock %}
+
+{% block container %}
+    
+    <h1>Détail de l'idée {{ idea.id }}</h1>
+
+    <ul style="list-style-type: none;">
+        <li>{{ idea.title | capitalize }}</li>
+        <li>{{ idea.description }}</li>
+        <li>{{ idea.author | capitalize }}</li>
+        <li>{{ idea.dateCreated | date("d/m/Y H:i:s") }}</li>
+        <li>{{ idea.category.name }}</li>
+    </ul>
+
+
+{% endblock %}
